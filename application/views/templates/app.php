@@ -5,7 +5,7 @@
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-	<title>E - Absensi | <?= $title ?></title>
+	<title>E - Magang | <?= $title ?></title>
 	<meta content="Responsive admin theme build on top of Bootstrap 4" name="description" />
 	<meta content="Themesdesign" name="author" />
 	<link rel="shortcut icon" href="<?= base_url('assets/') ?>images/favicon.ico">
@@ -39,7 +39,7 @@
 					<div>
 						<a href="index.html" class="logo">
 							<span class="logo-light">
-								<i class="mdi mdi-camera-control"></i> E - Absensi
+								<i class="mdi mdi-camera-control"></i> E - Magang
 							</span>
 						</a>
 					</div>
@@ -165,31 +165,32 @@
 	</div>
 
 	<!-- jQuery  -->
-	<script src="<?= base_url('assets/') ?>js/jquery.min.js"></script>
-	<script src="<?= base_url('assets/') ?>js/bootstrap.bundle.min.js"></script>
-	<script src="<?= base_url('assets/') ?>js/jquery.slimscroll.js"></script>
-	<script src="<?= base_url('assets/') ?>js/waves.min.js"></script>
-
-	<!-- App js -->
-	<script src="<?= base_url('assets/') ?>js/app.js"></script>
-
+	<script src="<?php echo base_url('assets/') ?>js/jquery.min.js"></script>
+	<script src="<?php echo base_url('assets/') ?>js/bootstrap.bundle.min.js"></script>
+	<script src="<?php echo base_url('assets/') ?>js/jquery.slimscroll.js"></script>
+	<script src="<?php echo base_url('assets/') ?>js/waves.min.js"></script>
 
 	<!-- Required datatable js -->
-	<script src="<?= base_url('assets/') ?>plugins/datatables/jquery.dataTables.min.js"></script>
-	<script src="<?= base_url('assets/') ?>plugins/datatables/dataTables.bootstrap4.min.js"></script>
-
+	<script src="<?php echo base_url('assets/') ?>plugins/datatables/jquery.dataTables.min.js"></script>
+	<script src="<?php echo base_url('assets/') ?>plugins/datatables/dataTables.bootstrap4.min.js"></script>
 	<!-- Buttons examples -->
-	<script src="<?= base_url('assets/') ?>plugins/datatables/dataTables.buttons.min.js"></script>
-	<script src="<?= base_url('assets/') ?>plugins/datatables/buttons.bootstrap4.min.js"></script>
-	<script src="<?= base_url('assets/') ?>plugins/datatables/jszip.min.js"></script>
-	<script src="<?= base_url('assets/') ?>plugins/datatables/pdfmake.min.js"></script>
-	<script src="<?= base_url('assets/') ?>plugins/datatables/vfs_fonts.js"></script>
-	<script src="<?= base_url('assets/') ?>plugins/datatables/buttons.html5.min.js"></script>
-	<script src="<?= base_url('assets/') ?>plugins/datatables/buttons.print.min.js"></script>
-	<script src="<?= base_url('assets/') ?>plugins/datatables/buttons.colVis.min.js"></script>
+	<script src="<?php echo base_url('assets/') ?>plugins/datatables/dataTables.buttons.min.js"></script>
+	<script src="<?php echo base_url('assets/') ?>plugins/datatables/buttons.bootstrap4.min.js"></script>
+	<script src="<?php echo base_url('assets/') ?>plugins/datatables/jszip.min.js"></script>
+	<script src="<?php echo base_url('assets/') ?>plugins/datatables/pdfmake.min.js"></script>
+	<script src="<?php echo base_url('assets/') ?>plugins/datatables/vfs_fonts.js"></script>
+	<script src="<?php echo base_url('assets/') ?>plugins/datatables/buttons.html5.min.js"></script>
+	<script src="<?php echo base_url('assets/') ?>plugins/datatables/buttons.print.min.js"></script>
+	<script src="<?php echo base_url('assets/') ?>plugins/datatables/buttons.colVis.min.js"></script>
+	<!-- Responsive examples -->
+	<script src="<?php echo base_url('assets/') ?>plugins/datatables/dataTables.responsive.min.js"></script>
+	<script src="<?php echo base_url('assets/') ?>plugins/datatables/responsive.bootstrap4.min.js"></script>
 
 	<!-- Datatable init js -->
-	<script src="<?= base_url('assets/') ?>pages/datatables.init.js"></script>
+	<script src="<?php echo base_url('assets/') ?>pages/datatables.init.js"></script>
+
+	<!-- App js -->
+	<script src="<?php echo base_url('assets/') ?>js/app.js"></script>
 
 	<!-- sweetalert -->
 	<script src="<?php echo base_url('assets/') ?>alert.js"></script>

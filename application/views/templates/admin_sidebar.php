@@ -15,26 +15,22 @@
 						<ul class="submenu megamenu">
 							<li>
 								<ul>
-									<li><a href="<?= base_url('data-karyawan'); ?>">Data Karyawan</a></li>
-									<li><a href="<?= base_url('data-jabatan'); ?>">Data Jabatan</a></li>
+									<li><a href="<?= base_url('data-mahasiswa'); ?>">Data Mahasiswa</a></li>
+									<li><a href="<?= base_url('data-kontrak'); ?>">Data Kontrak</a></li>
 								</ul>
 							</li>
 						</ul>
 					</li>
 					<li class="has-submenu">
-						<a href="#"><i class="icon-pencil-ruler"></i> Master Absensi <i class="mdi mdi-chevron-down mdi-drop"></i></a>
+						<a href="#"><i class="icon-pencil-ruler"></i> Settings <i class="mdi mdi-chevron-down mdi-drop"></i></a>
 						<ul class="submenu megamenu">
 							<li>
 								<ul>
-									<li><a href="<?= base_url('data-absensi'); ?>">Data Absensi</a></li>
-									<li><a href="ui-alerts.html">Data Overtime</a></li>
-									<li><a href="<?= base_url('data-cuti'); ?>">Data Cuti</a></li>
+									<li><a href="<?= base_url('data-absensi'); ?>">Website</a></li>
 								</ul>
 							</li>
 						</ul>
 					</li>
-
-
 				</ul>
 				<!-- End navigation menu -->
 			</div>

@@ -53,23 +53,12 @@ $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-// Master Jabatan
-$route['data-jabatan'] = 'Karyawan/jabatan';
-$route['add-jabatan'] = 'Karyawan/addjabatan';
-$route['hapus-jabatan'] = 'Karyawan/deletejabatan';
+// Master Mahasiswa
+$route['data-mahasiswa'] = 'Mahasiswa';
+$route['add-mahasiswa'] = 'Mahasiswa/addmahasiswa';
+$route['hapus-mahasiswa'] = 'Mahasiswa/deletemahasiswa';
 
 // Master Karyawan
 $route['data-karyawan'] = 'Karyawan';
 $route['add-karyawan'] = 'Karyawan/addkaryawan';
 $route['edit-karyawan'] = 'Karyawan/editkaryawan';
-
-// Master Cuti 
-$route['data-cuti'] = 'Cuti';
-$route['terima-cuti'] = 'Cuti/cuti_terima/';
-$route['tolak-cuti'] = 'Cuti/cuti_tolak/';
-
-$route['data-cuti-karyawan'] = 'Cuti/cuti_karyawan';
-$route['add-cuti-karyawan'] = 'Cuti/cuti_add';
-
-// Master Absensi
-$route['data-absensi'] = 'Absen';

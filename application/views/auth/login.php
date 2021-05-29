@@ -5,7 +5,7 @@
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-	<title>E - Absensi | <?= $title; ?></title>
+	<title> E - Magang | <?= $title; ?></title>
 	<meta content="Responsive admin theme build on top of Bootstrap 4" name="description" />
 	<meta content="Themesdesign" name="author" />
 	<link rel="shortcut icon" href="<?= base_url('assets/') ?>images/favicon.ico">
@@ -28,7 +28,7 @@
 				<div class="text-center m-t-0 m-b-15">
 					<a href="index.html" class="logo logo-admin"><img src="<?= base_url('assets/') ?>assets/images/logo-dark.png" alt="" height="24"></a>
 				</div>
-				<h5 class="font-18 text-center">Login <br> E-Absensi PT.</h5>
+				<h5 class="font-18 text-center">Login <br> E-Magang PERUM BULOG</h5>
 
 
 
