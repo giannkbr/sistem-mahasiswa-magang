@@ -58,7 +58,7 @@ $route['data-mahasiswa'] = 'Mahasiswa';
 $route['add-mahasiswa'] = 'Mahasiswa/addmahasiswa';
 $route['hapus-mahasiswa'] = 'Mahasiswa/deletemahasiswa';
 
-// Master Karyawan
-$route['data-karyawan'] = 'Karyawan';
-$route['add-karyawan'] = 'Karyawan/addkaryawan';
-$route['edit-karyawan'] = 'Karyawan/editkaryawan';
+// Master Nilai
+$route['data-nilai'] = 'Nilai';
+$route['add-nilai'] = 'Nilai/addnilai';
+$route['edit-nilai'] = 'Nilai/editnilai';

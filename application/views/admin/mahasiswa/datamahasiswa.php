@@ -18,8 +18,8 @@
  							<th>TTL</th>
  							<th>Perguruan Tinggi</th>
  							<th>Program Studi</th>
- 							<th>Pas Photo</th>
- 							<th>Action</th>
+ 							<th>Photo</th>
+ 							<th>Opsi</th>
  						</tr>
  					</thead>
  					<tbody>

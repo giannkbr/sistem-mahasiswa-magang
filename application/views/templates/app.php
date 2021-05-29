@@ -170,6 +170,7 @@
 	<script src="<?php echo base_url('assets/') ?>js/jquery.slimscroll.js"></script>
 	<script src="<?php echo base_url('assets/') ?>js/waves.min.js"></script>
 
+
 	<!-- Required datatable js -->
 	<script src="<?php echo base_url('assets/') ?>plugins/datatables/jquery.dataTables.min.js"></script>
 	<script src="<?php echo base_url('assets/') ?>plugins/datatables/dataTables.bootstrap4.min.js"></script>

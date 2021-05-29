@@ -1,6 +1,6 @@
  <div class="row">
  	<div class="col-12">
- 		<div class="card">
+ 		<div class="card m-b-30">
  			<div class="card-body">
  				<form enctype="multipart/form-data" method="post" action="<?= base_url('add-mahasiswa') ?>">
  					<h4 class="text-primary font-weight-bold">Data Pribadi</h4>
