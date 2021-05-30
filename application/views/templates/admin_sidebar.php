@@ -16,6 +16,7 @@
 							<li>
 								<ul>
 									<li><a href="<?= base_url('data-mahasiswa'); ?>">Data Mahasiswa</a></li>
+									<li><a href="<?= base_url('data-magang'); ?>">Data Magang</a></li>
 									<li><a href="<?= base_url('data-nilai'); ?>">Data Nilai</a></li>
 									<li><a href="<?= base_url('data-kontrak'); ?>">Data Kontrak</a></li>
 								</ul>

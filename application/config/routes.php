@@ -62,3 +62,9 @@ $route['hapus-mahasiswa'] = 'Mahasiswa/deletemahasiswa';
 $route['data-nilai'] = 'Nilai';
 $route['add-nilai'] = 'Nilai/addnilai';
 $route['edit-nilai'] = 'Nilai/editnilai';
+
+
+// Master Magang
+$route['data-magang'] = 'Magang';
+$route['add-magang'] = 'Magang/addmagang';
+$route['edit-magang'] = 'Magang/editmagang';
