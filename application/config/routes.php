@@ -68,3 +68,8 @@ $route['edit-nilai'] = 'Nilai/editnilai';
 $route['data-magang'] = 'Magang';
 $route['add-magang'] = 'Magang/addmagang';
 $route['edit-magang'] = 'Magang/editmagang';
+
+// Master Kontrak
+$route['data-kontrak'] = 'Kontrak';
+$route['add-kontrak'] = 'Kontrak/addkontrak';
+$route['edit-kontrak'] = 'Kontrak/editkontrak';

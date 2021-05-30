@@ -105,19 +105,18 @@
  						</div>
  					</div>
 
- 					<!-- <div class="row form-group">
- 						<label class="col-sm-2 col-form-label" for=" photo">Upload Pas Photo</label>
+ 					<div class="form-group row">
+ 						<label for="photo" class="col-sm-2 col-form-label">Foto</label>
  						<div class="col-sm-10">
- 							<?php
-								if (isset($data->photo)) { ?>
- 								<div class="col-sm-10">
- 									<img style="width: 100px;" class="img-fluid" src="<?= base_url('images/users/') . $data->photo; ?>">
- 								</div>
- 							<?php } ?>
+ 							<?php if (!empty($data->photo)) : ?>
+ 								<img src="<?= base_url('images/users/' . $data->photo) ?>" height="150">
+ 							<?php else : ?>
+ 								<p>No Photo</p>
+ 							<?php endif; ?>
 
- 							<input type="file" id="photo" name="photo" class="form-control" placeholder="Pas Photo">
+ 							<input name="photo" type="file" class="form-control-file">
  						</div>
- 					</div> -->
+ 					</div>
 
  					<hr>
  					<h4 class="text-primary font-weight-bold">Keluarga</h4>

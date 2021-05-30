@@ -65,6 +65,14 @@ class Admin_model extends CI_Model
 		$this->db->where('magang.magang_id', $id);
 		return $this->db->get();
 	}
+
+	public function kontrak()
+	{
+		$this->db->select('*');
+		$this->db->from('mahasiswa');
+		$this->db->join('kontrak', 'mahasiswa.nim = kontrak.nim');
+		return $this->db->get();
+	}
 }
 
 /* End of file ModelName.php */

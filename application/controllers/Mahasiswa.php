@@ -255,6 +255,27 @@ class Mahasiswa extends CI_Controller
 				'nama_pemilik' => $this->input->post('nama_pemilik'),
 			];
 
+			// Jika foto diubah
+			if (isset($_FILES['photo']['name'])) {
+				$config['upload_path'] 		= './images/users/';
+				$config['allowed_types'] 	= 'gif|jpg|png|jpeg';
+				$config['overwrite']  		= true;
+
+				$this->load->library('upload', $config);
+
+				if (!$this->upload->do_upload('photo')) {
+					$this->session->set_flashdata('message', 'swal("Ops!", "Photo gagal diupload", "error");');
+					redirect('add-mahasiswa');
+				} else {
+					$img = $this->upload->data();
+					$data['photo'] = $img['file_name'];
+				}
+
+				$this->db->insert('mahasiswa', $data);
+				$this->session->set_flashdata('message', 'swal("Berhasil!", "Data Mahasiswa Berhasil Ditambahkan!", "success");');
+
+				redirect(base_url('data-mahasiswa'));
+			}
 
 			$this->admin->editMahasiswa($id, $data);
 			$this->session->set_flashdata('message', 'swal("Berhasil!", "Data Mahasiswa Berhasil Diedit!", "success");');

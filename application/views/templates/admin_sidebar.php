@@ -28,7 +28,7 @@
 						<ul class="submenu megamenu">
 							<li>
 								<ul>
-									<li><a href="<?= base_url('data-absensi'); ?>">Website</a></li>
+									<li><a href="<?= base_url('cetak-laporan'); ?>">Cetak Laporan</a></li>
 								</ul>
 							</li>
 						</ul>
