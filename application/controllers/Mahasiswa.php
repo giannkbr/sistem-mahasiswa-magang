@@ -224,6 +224,8 @@ class Mahasiswa extends CI_Controller
 		]);
 
 
+
+
 		if ($this->form_validation->run() == FALSE) {
 			$data = [
 				'title' => 'Edit Data Mahasiswa',
@@ -254,29 +256,27 @@ class Mahasiswa extends CI_Controller
 				'nomor_rek' => $this->input->post('nomor_rek', true),
 				'nama_pemilik' => $this->input->post('nama_pemilik'),
 			];
+			$oldPhoto = $this->input->post('ganti_gambar');
+			$path = './images/users/';
+			$config['upload_path'] 		= './images/users/';
+			$config['allowed_types'] 	= 'gif|jpg|png|jpeg';
+			$config['overwrite']  		= true;
 
+			$this->load->library('upload', $config);
 			// Jika foto diubah
-			if (isset($_FILES['photo']['name'])) {
-				$config['upload_path'] 		= './images/users/';
-				$config['allowed_types'] 	= 'gif|jpg|png|jpeg';
-				$config['overwrite']  		= true;
+			if ($_FILES['photo']['name']) {
+				if ($this->upload->do_upload('photo')) {
 
-				$this->load->library('upload', $config);
-
-				if (!$this->upload->do_upload('photo')) {
-					$this->session->set_flashdata('message', 'swal("Ops!", "Photo gagal diupload", "error");');
-					redirect('add-mahasiswa');
-				} else {
-					$img = $this->upload->data();
-					$data['photo'] = $img['file_name'];
+					@unlink($path . $oldPhoto);
+					if (!$this->upload->do_upload('photo')) {
+						$this->session->set_flashdata('message', 'swal("Ops!", "Photo gagal diupload", "error");');
+						redirect('add-mahasiswa');
+					} else {
+						$newPhoto = $this->upload->data();
+						$data['photo'] = $newPhoto['file_name'];
+					}
 				}
-
-				$this->db->insert('mahasiswa', $data);
-				$this->session->set_flashdata('message', 'swal("Berhasil!", "Data Mahasiswa Berhasil Ditambahkan!", "success");');
-
-				redirect(base_url('data-mahasiswa'));
 			}
-
 			$this->admin->editMahasiswa($id, $data);
 			$this->session->set_flashdata('message', 'swal("Berhasil!", "Data Mahasiswa Berhasil Diedit!", "success");');
 

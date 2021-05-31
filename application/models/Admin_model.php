@@ -73,6 +73,20 @@ class Admin_model extends CI_Model
 		$this->db->join('kontrak', 'mahasiswa.nim = kontrak.nim');
 		return $this->db->get();
 	}
+
+	public function editKontrak($id, $data)
+	{
+		$this->db->update('kontrak', $data, ['kontrak_id' => $id]);
+		return $this->db->affected_rows();
+	}
+
+	public function kontrakid($id)
+	{
+		$this->db->select('*');
+		$this->db->from('kontrak');
+		$this->db->where('kontrak.kontrak_id', $id);
+		return $this->db->get();
+	}
 }
 
 /* End of file ModelName.php */

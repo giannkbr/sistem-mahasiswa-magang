@@ -2,10 +2,12 @@
  	<div class="col-12">
  		<div class="card">
  			<div class="card-body">
- 				<form action="<?= base_url('Mahasiswa/editmahasiswa/' . $data->nim) ?>" method="post">
+ 				<form action="<?= base_url('Mahasiswa/editmahasiswa/' . $data->nim) ?>" method="post" enctype="multipart/form-data">
  					<h4 class="text-primary font-weight-bold">Data Pribadi</h4>
  					<br>
- 					<div class="row form-group">
+ 					<input type="hidden" id="ganti_gambar" value="<?= $data->photo ?>" name="ganti_gambar" class="form-control" placeholder="Pas Photo">
+ 					<div class="form-group row">
+
  						<label class="col-sm-2 col-form-label" for=" nama">Nama Mahasiswa</label>
  						<div class="col-sm-10">
  							<input type="text" id="nama" name="nama" value="<?= $data->nama ?>" class=" form-control" placeholder="Nama Mahasiswa">
@@ -13,7 +15,7 @@
  						</div>
  					</div>
 
- 					<div class="row form-group">
+ 					<div class="form-group row">
  						<label class="col-sm-2 col-form-label" for=" email">Email</label>
  						<div class="col-sm-10">
  							<input type="text" id="email" name="email" value="<?= $data->email ?>" class=" form-control" placeholder="Email">
@@ -21,14 +23,14 @@
  						</div>
  					</div>
 
- 					<div class="row form-group">
+ 					<div class="form-group row">
  						<label class="col-sm-2 col-form-label" for=" nim">NIM</label>
  						<div class="col-sm-10">
  							<input type="text" id="nim" name="nim" value="<?= $data->nim ?>" class=" form-control" placeholder="NIM">
  							<?= form_error('nim', '<span class="text-danger small">', '</span>'); ?>
  						</div>
  					</div>
- 					<div class="row form-group">
+ 					<div class="form-group row">
  						<label class="col-sm-2 col-form-label" for=" nik">NIK</label>
  						<div class="col-sm-10">
  							<input type="text" id="nik" name="nik" value="<?= $data->nik ?>" class=" form-control" placeholder="NIK">
@@ -36,7 +38,7 @@
  						</div>
  					</div>
 
- 					<div class="row form-group">
+ 					<div class="form-group row">
  						<label class="col-sm-2 col-form-label" for=" jenis_kelamin">Jenis Kelamin</label>
  						<div class="col-sm-10">
  							<div class="custom-control custom-radio">
@@ -51,7 +53,7 @@
  						</div>
  					</div>
 
- 					<div class="row form-group">
+ 					<div class="form-group row">
  						<label class="col-sm-2 col-form-label" for=" tempat_lahir">Tempat Lahir</label>
  						<div class="col-sm-10">
  							<input type="text" id="tempat_lahir" value="<?= $data->tempat_lahir ?>" name="tempat_lahir" class="form-control" placeholder="Tempat Lahir">
@@ -59,7 +61,7 @@
  						</div>
  					</div>
 
- 					<div class="row form-group">
+ 					<div class="form-group row">
  						<label class="col-sm-2 col-form-label" for=" tanggal_lahir">Tanggal lahir</label>
  						<div class="col-sm-10">
  							<input name="tanggal_lahir" id="tanggal_lahir" value="<?= $data->tanggal_lahir ?>" type="date" class="form-control date" placeholder="Tanggal Lahir">
@@ -67,7 +69,7 @@
  						</div>
  					</div>
 
- 					<div class="row form-group">
+ 					<div class="form-group row">
  						<label class="col-sm-2 col-form-label" for=" perguruan_tinggi">Perguruan Tinggi</label>
  						<div class="col-sm-10">
  							<input type="text" id="perguruan_tinggi" value="<?= $data->perguruan_tinggi ?>" name="perguruan_tinggi" class="form-control" placeholder="Perguruan Tinggi">
@@ -75,7 +77,7 @@
  						</div>
  					</div>
 
- 					<div class="row form-group">
+ 					<div class="form-group row">
  						<label class="col-sm-2 col-form-label" for=" jurusan">Program Studi</label>
  						<div class="col-sm-10">
  							<input type="text" id="jurusan" name="jurusan" value="<?= $data->jurusan ?>" class="form-control" placeholder="Program Studi">
@@ -83,7 +85,7 @@
  						</div>
  					</div>
 
- 					<div class="row form-group">
+ 					<div class="form-group row">
  						<label class="col-sm-2 col-form-label" for=" telepon">Nomer Telepon</label>
  						<div class="col-sm-10">
  							<input type="text" id="telepon" name="telepon" value="<?= $data->telepon ?>" class="form-control" placeholder="Nomer Telepon">
@@ -91,14 +93,14 @@
  						</div>
  					</div>
 
- 					<div class="row form-group">
+ 					<div class="form-group row">
  						<label class="col-sm-2 col-form-label" for=" akun_ig">Akun Instagram</label>
  						<div class="col-sm-10">
  							<input type="text" id="akun_ig" value="<?= $data->akun_ig ?>" name="akun_ig" class="form-control" placeholder="Akun Instagram">
  						</div>
  					</div>
 
- 					<div class="row form-group">
+ 					<div class="form-group row">
  						<label class="col-sm-2 col-form-label" for=" akun_fb">Akun Facebook</label>
  						<div class="col-sm-10">
  							<input type="text" id="akun_fb" name="akun_fb" value="<?= $data->akun_fb ?>" class="form-control" placeholder="Akun Facebook">
@@ -106,22 +108,27 @@
  					</div>
 
  					<div class="form-group row">
- 						<label for="photo" class="col-sm-2 col-form-label">Foto</label>
+ 						<label class="col-sm-2 col-form-label" for="pasphoto">Pas Photo</label>
  						<div class="col-sm-10">
- 							<?php if (!empty($data->photo)) : ?>
- 								<img src="<?= base_url('images/users/' . $data->photo) ?>" height="150">
- 							<?php else : ?>
- 								<p>No Photo</p>
- 							<?php endif; ?>
-
- 							<input name="photo" type="file" class="form-control-file">
+ 							<div class="list-group">
+ 								<?php if (!empty($data)) : ?>
+ 									<img src="<?php echo base_url('images/users/' . $data->photo) ?>" style="width: 200px; height: 200px;">
+ 								<?php else : ?>
+ 									<img src="<?php echo base_url('images/users/default.png') ?>" style="width: 200px; height: 200px;">
+ 								<?php endif ?>
+ 							</div>
+ 						</div>
+ 						<label class="col-sm-2 col-form-label" for="photo">Upload Pas Photo</label>
+ 						<div class="col-sm-10">
+ 							<input type="file" id="photo" name="photo" class="form-control" placeholder="Pas Photo">
+ 							<?= form_error('photo', '<span class="text-danger small">', '</span>'); ?>
  						</div>
  					</div>
 
  					<hr>
  					<h4 class="text-primary font-weight-bold">Keluarga</h4>
  					<br>
- 					<div class="row form-group">
+ 					<div class="form-group row">
  						<label class="col-sm-2 col-form-label" for=" nama_keluarga">Nama Keluarga</label>
  						<div class="col-sm-10">
  							<input type="text" id="nama_keluarga" name="nama_keluarga" value="<?= $data->nama_keluarga ?>" class="form-control" placeholder="Nama Keluarga">
@@ -129,7 +136,7 @@
  						</div>
  					</div>
 
- 					<div class="row form-group">
+ 					<div class="form-group row">
  						<label class="col-sm-2 col-form-label" for=" hubungan">Hubungan</label>
  						<div class="col-sm-10">
  							<input type="text" id="hubungan" name="hubungan" value="<?= $data->hubungan ?>" class="form-control" placeholder="Hubungan">
@@ -137,7 +144,7 @@
  						</div>
  					</div>
 
- 					<div class="row form-group">
+ 					<div class="form-group row">
  						<label class="col-sm-2 col-form-label" for=" telepon_kel">Nomor Telepon Keluarga</label>
  						<div class="col-sm-10">
  							<input type="text" id="telepon_kel" name="telepon_kel" value="<?= $data->telepon_kel ?>" class="form-control" placeholder="Nomor Telepon Keluarga">
@@ -147,7 +154,7 @@
  					<hr>
  					<h4 class="text-primary font-weight-bold">Data Bank</h4>
  					<br>
- 					<div class="row form-group">
+ 					<div class="form-group row">
  						<label class="col-sm-2 col-form-label" for=" bank">Nama Bank</label>
  						<div class="col-sm-10">
  							<input type="text" id="bank" name="bank" class="form-control" value="<?= $data->bank ?>" placeholder="Nama Bank">
@@ -155,7 +162,7 @@
  						</div>
  					</div>
 
- 					<div class="row form-group">
+ 					<div class="form-group row">
  						<label class="col-sm-2 col-form-label" for=" nomer_rek">Nomor Rekening</label>
  						<div class="col-sm-10">
  							<input type="text" id="nomor_rek" name="nomor_rek" value="<?= $data->nomor_rek ?>" class="form-control" placeholder="Nomor Rekening">
@@ -163,7 +170,7 @@
  						</div>
  					</div>
 
- 					<div class="row form-group">
+ 					<div class="form-group row">
  						<label class="col-sm-2 col-form-label" for=" bank">Nama Pemilik</label>
  						<div class="col-sm-10">
  							<input type="text" id="nama_pemilik" name="nama_pemilik" value="<?= $data->nama_pemilik ?>" class="form-control" placeholder="Nama Pemilik">

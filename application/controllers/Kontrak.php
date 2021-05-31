@@ -96,6 +96,78 @@ class Kontrak extends CI_Controller
 		$this->session->set_flashdata('message', 'swal("Berhasil!", "Data Kontrak Berhasil Dihapus!", "success");');
 		redirect(base_url('data-kontrak'));
 	}
+
+	public function editkontrak($id)
+	{
+
+		$this->form_validation->set_rules('nim', 'Nomer Induk Mahasiswa', 'required', [
+			'required' => 'Nomer Induk Mahasiswa tidak boleh kosong.',
+		]);
+
+		$this->form_validation->set_rules('no_kontrak', 'Nomor Kontrak', 'required', [
+			'required' => 'Nomor Kontrak tidak boleh kosong.',
+		]);
+
+		$this->form_validation->set_rules('tanggal_kontrak', 'Tanggal Kontrak', 'required', [
+			'required' => 'Tanggal Kontrak tidak boleh kosong.',
+		]);
+
+		$this->form_validation->set_rules('perihal', 'perihal', 'required', [
+			'required' => 'Perihal tidak boleh kosong.',
+		]);
+
+		$this->form_validation->set_rules('upah', 'Uang Saku', 'required', [
+			'required' => 'Uang Saku tidak boleh kosong.',
+		]);
+
+
+		if ($this->form_validation->run() == FALSE) {
+			$data = [
+				'title' => 'Edit Data kontrak',
+				'page' => 'admin/kontrak/editkontrak',
+				'subtitle' => 'Admin',
+				'subtitle2' => 'Edit Data kontrak',
+				'mahasiswa' => $this->db->get('mahasiswa')->result(),
+				'data' => $this->admin->kontrakid($id)->row()
+			];
+
+			$this->load->view('templates/app', $data);
+		} else {
+			$data = [
+				'nim' => $this->input->post('nim'),
+				'no_kontrak' => $this->input->post('no_kontrak'),
+				'tanggal_kontrak' => $this->input->post('tanggal_kontrak'),
+				'perihal' => $this->input->post('perihal'),
+				'upah' => $this->input->post('upah'),
+			];
+
+			$oldKontrak = $this->input->post('ganti_kontrak');
+			$path = './kontrak/';
+			$config['upload_path'] 		= './kontrak/';
+			$config['allowed_types'] 	= 'pdf';
+			$config['overwrite']  		= true;
+
+			$this->load->library('upload', $config);
+			// Jika foto diubah
+			if ($_FILES['kontrak']['name']) {
+				if ($this->upload->do_upload('kontrak')) {
+
+					@unlink($path . $oldKontrak);
+					if (!$this->upload->do_upload('kontrak')) {
+						$this->session->set_flashdata('message', 'swal("Ops!", "kontrak gagal diupload", "error");');
+						redirect('add-mahasiswa');
+					} else {
+						$newKontrak = $this->upload->data();
+						$data['kontrak'] = $newKontrak['file_name'];
+					}
+				}
+			}
+			$this->admin->editKontrak($id, $data);
+			$this->session->set_flashdata('message', 'swal("Berhasil!", "Data kontrak Berhasil Diedit!", "success");');
+
+			redirect(base_url('data-kontrak'));
+		}
+	}
 }
 
 /* End of file Kontrak.php */

@@ -28,7 +28,7 @@
 						<ul class="submenu megamenu">
 							<li>
 								<ul>
-									<li><a href="<?= base_url('cetak-laporan'); ?>">Cetak Laporan</a></li>
+									<li><a href="<?= base_url('cetak-data-mahasiswa'); ?>">Cetak Data Mahasiswa</a></li>
 								</ul>
 							</li>
 						</ul>
