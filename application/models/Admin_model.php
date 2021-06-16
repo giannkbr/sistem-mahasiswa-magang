@@ -101,12 +101,18 @@ class Admin_model extends CI_Model
 		return $this->db->affected_rows();
 	}
 
-	function usersid($id)
+	function absenid($id)
 	{
 		$this->db->select('*');
-		$this->db->from('mahasiswa');
-		$this->db->where('mahasiswa.nim', $id);
+		$this->db->from('absen');
+		$this->db->where('absen.id_absen', $id);
 		return $this->db->get();
+	}
+
+	public function editabsen($id, $data)
+	{
+		$this->db->update('absen', $data, ['id_absen' => $id]);
+		return $this->db->affected_rows();
 	}
 
 	public function cuti()

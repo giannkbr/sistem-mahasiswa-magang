@@ -38,10 +38,10 @@
 										<a onclick="return confirm('apakah anda yakin ingin menolak pengajuan izin ini?')" href="<?= base_url('Cuti/cuti_tolak/' . $d->id_cuti) ?>" class="btn btn-danger btn-sm"><span class="fa fa-trash"></span></a>
 									<?php } ?>
 									<?php if ($d->status == 'diterima') { ?>
-										<button class="btn btn-primary btn-sm">Anda menerima pengajuan</button>
+										<button class="btn btn-primary btn-sm">Anda menerima pengajuan izin, <?= $d->nama ?></button>
 									<?php } ?>
 									<?php if ($d->status == 'ditolak') { ?>
-										<button class="btn btn-danger btn-sm">Anda menolak pengajuan</button>
+										<button class="btn btn-danger btn-sm">Anda menolak pengajuan, <?= $d->nama ?></button>
 									<?php } ?>
 								</td>
 							</tr>
