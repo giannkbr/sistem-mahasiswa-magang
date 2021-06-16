@@ -52,17 +52,18 @@
 	<div class="col-sm-12 col-xl-12">
 		<!-- Map card -->
 		<div class="card">
-			<div class="card-header"> Notifikasi </h3>
+			<div class="card-header">
+				<h3>Notifikasi</h3>
 			</div>
 			<form method="post" action="<?= base_url('user/proses_absen'); ?>">
 				<div class="card-body">
 					<div class="form-group row">
 						<div class="col-sm-10">
 							<?php if ($waktu != 'dilarang') { ?>
-								<h4>Hai, <?= $this->session->userdata('nama') ?> Anda hari ini belum melakukan absen <b><?= $waktu ?></b>.
+								<h3>Hai, <?= $this->session->userdata('nama') ?> Anda hari ini belum melakukan absen <b><?= $waktu ?></b>.
 									<input type="hidden" name="ket" id="ket" value="<?= $waktu ?>">
 								<?php } else { ?>
-									<h4>Hai, <?= $this->session->userdata('nama') ?> anda hari ini sudah melakukan absensi <b>Masuk</b> dan <b>Pulang</b></h4>
+									<h3>Hai, <?= $this->session->userdata('nama') ?> anda hari ini sudah melakukan absensi <b>Masuk</b> dan <b>Pulang</b></h3>
 								<?php }  ?>
 						</div>
 					</div>
@@ -98,7 +99,7 @@
 					</div>
 					<div class="form-group row">
 						<div class="col-sm-10">
-							<h5>Silahkan lakukan absen pada tombol absen berikut </h5>
+							<h3>Silahkan lakukan absen pada tombol absen berikut </h3>
 							<button class="btn btn-primary" id="btn-absensi">Absen <?= $waktu ?></button></h4>
 						</div>
 					</div>
