@@ -73,3 +73,8 @@ $route['edit-magang'] = 'Magang/editmagang';
 $route['data-kontrak'] = 'Kontrak';
 $route['add-kontrak'] = 'Kontrak/addkontrak';
 $route['edit-kontrak'] = 'Kontrak/editkontrak';
+
+// Master Absensi
+$route['data-absensi'] = 'Absen';
+$route['rekap-absensi'] = 'Absen/rekapabsensi';
+$route['rekap-absensi-filter'] = 'Absen/laporanfilter';

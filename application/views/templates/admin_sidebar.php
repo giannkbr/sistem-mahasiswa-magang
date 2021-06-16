@@ -24,11 +24,12 @@
 						</ul>
 					</li>
 					<li class="has-submenu">
-						<a href="#"><i class="icon-pencil-ruler"></i> Settings <i class="mdi mdi-chevron-down mdi-drop"></i></a>
+						<a href="#"><i class="icon-pencil-ruler"></i> Master Absensi <i class="mdi mdi-chevron-down mdi-drop"></i></a>
 						<ul class="submenu megamenu">
 							<li>
 								<ul>
-									<li><a href="<?= base_url('cetak-data-mahasiswa'); ?>">Cetak Data Mahasiswa</a></li>
+									<li><a href="<?= base_url('data-absensi'); ?>">Data Absensi</a></li>
+									<li><a href="<?= base_url('rekap-absensi'); ?>">Rekap Absensi</a></li>
 								</ul>
 							</li>
 						</ul>

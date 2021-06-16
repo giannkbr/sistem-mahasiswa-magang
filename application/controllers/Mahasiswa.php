@@ -223,9 +223,6 @@ class Mahasiswa extends CI_Controller
 			'required' => 'Harap isi kolom Nama Pemilik',
 		]);
 
-
-
-
 		if ($this->form_validation->run() == FALSE) {
 			$data = [
 				'title' => 'Edit Data Mahasiswa',

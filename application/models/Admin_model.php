@@ -87,6 +87,46 @@ class Admin_model extends CI_Model
 		$this->db->where('kontrak.kontrak_id', $id);
 		return $this->db->get();
 	}
+
+	function mahasiswa()
+	{
+		$this->db->select('*');
+		$this->db->from('mahasiswa');
+		return $this->db->get();
+	}
+
+	public function editKaryawan($id, $data)
+	{
+		$this->db->update('mahasiswa', $data, ['nip' => $id]);
+		return $this->db->affected_rows();
+	}
+
+	function usersid($id)
+	{
+		$this->db->select('*');
+		$this->db->from('users');
+		$this->db->where('users.nip', $id);
+		return $this->db->get();
+	}
+
+	// public function cuti()
+	// {
+	// 	$this->db->select('*');
+	// 	$this->db->from('cuti');
+	// 	$this->db->join('users', 'cuti.nip = users.nip');
+	// 	$this->db->order_by('cuti.id_cuti', 'desc');
+	// 	return $this->db->get();
+	// }
+
+	// public function cuti_karyawan($id)
+	// {
+	// 	$this->db->select('*');
+	// 	$this->db->from('cuti');
+	// 	$this->db->join('users', 'cuti.nip = users.nip');
+	// 	$this->db->where('users.nip', $id);
+	// 	$this->db->order_by('cuti.id_cuti', 'desc');
+	// 	return $this->db->get();
+	// }
 }
 
 /* End of file ModelName.php */
