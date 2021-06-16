@@ -16,20 +16,22 @@
 						<li>
 							<ul>
 								<li><a href="<?= base_url('Absen/getAbsenId/' . $this->session->userdata('nim')) ?>">Data Absensi</a></li>
+								<li><a href="<?= base_url('data-cuti-karyawan'); ?>">Data Izin</a></li>
 							</ul>
 						</li>
 					</ul>
 				</li>
-				<li class="has-submenu">
+				<!-- <li class="has-submenu">
 					<a href="#"><i class="icon-pencil-ruler"></i> Laporan <i class="mdi mdi-chevron-down mdi-drop"></i></a>
 					<ul class="submenu megamenu">
 						<li>
 							<ul>
 								<li><a href="<?= base_url('cetak-data-absensi'); ?>">Data Absensi</a></li>
+							
 							</ul>
 						</li>
 					</ul>
-				</li>
+				</li> -->
 
 			</ul>
 			<!-- End navigation menu -->

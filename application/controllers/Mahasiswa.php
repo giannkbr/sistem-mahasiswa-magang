@@ -34,8 +34,12 @@ class Mahasiswa extends CI_Controller
 			'required' => 'Harap isi kolom Nama Mahasiswa',
 		]);
 
-		$this->form_validation->set_rules('email', 'Email', 'required', [
-			'required' => 'Harap isi kolom E-mail',
+		$this->form_validation->set_rules('username', 'username', 'required', [
+			'required' => 'Harap isi kolom username',
+		]);
+
+		$this->form_validation->set_rules('password', 'password', 'required', [
+			'required' => 'Harap isi kolom password',
 		]);
 
 		$this->form_validation->set_rules('nim', 'NIM', 'required', [
@@ -110,7 +114,8 @@ class Mahasiswa extends CI_Controller
 		} else {
 			$data = [
 				'nama' => $this->input->post('nama', true),
-				'email' => $this->input->post('email', true),
+				'username' => $this->input->post('username', true),
+				'password' => hashEncrypt($this->input->post('password')),
 				'nim' => $this->input->post('nim', true),
 				'nik' => $this->input->post('nik', true),
 				'jenis_kelamin' => $this->input->post('jenis_kelamin', true),
@@ -127,6 +132,8 @@ class Mahasiswa extends CI_Controller
 				'bank' => $this->input->post('bank', true),
 				'nomor_rek' => $this->input->post('nomor_rek', true),
 				'nama_pemilik' => $this->input->post('nama_pemilik'),
+				'role_id' => $this->input->post('role_id')
+
 			];
 
 			if (isset($_FILES['photo']['name'])) {
@@ -159,7 +166,7 @@ class Mahasiswa extends CI_Controller
 			'required' => 'Harap isi kolom Nama Mahasiswa',
 		]);
 
-		$this->form_validation->set_rules('email', 'Email', 'required', [
+		$this->form_validation->set_rules('username', 'username', 'required', [
 			'required' => 'Harap isi kolom E-mail',
 		]);
 
@@ -235,7 +242,8 @@ class Mahasiswa extends CI_Controller
 		} else {
 			$data = [
 				'nama' => $this->input->post('nama', true),
-				'email' => $this->input->post('email', true),
+				'username' => $this->input->post('username', true),
+				'password' => hashEncrypt($this->input->post('password')),
 				'nim' => $this->input->post('nim', true),
 				'nik' => $this->input->post('nik', true),
 				'jenis_kelamin' => $this->input->post('jenis_kelamin', true),
@@ -252,6 +260,8 @@ class Mahasiswa extends CI_Controller
 				'bank' => $this->input->post('bank', true),
 				'nomor_rek' => $this->input->post('nomor_rek', true),
 				'nama_pemilik' => $this->input->post('nama_pemilik'),
+				'role_id' => $this->input->post('role_id'),
+				'waktu_masuk' => date('Y-m-d')
 			];
 			$oldPhoto = $this->input->post('ganti_gambar');
 			$path = './images/users/';

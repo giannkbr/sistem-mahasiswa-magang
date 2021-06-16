@@ -42,9 +42,6 @@
 			geolocationErrorOccurred(false, popup, geolocationMap.getCenter());
 		}
 	};
-
-	document.getElementById("lokasi")
-	document.getElementById("lokasi").innerHTML = position.coords.latitude + ", " + position.coords.longitude;
 </script>
 
 <div class="row">
@@ -60,19 +57,18 @@
 					<div class="form-group row">
 						<div class="col-sm-10">
 							<?php if ($waktu != 'dilarang') { ?>
-								<h3>Hai, <?= $this->session->userdata('nama') ?> Anda hari ini belum melakukan absen <b><?= $waktu ?></b>.
+								<h3>Hai, <?= $this->session->userdata('nama') ?> Anda hari ini belum melakukan Absen <b><?= $waktu ?></b>.
 									<input type="hidden" name="ket" id="ket" value="<?= $waktu ?>">
 								<?php } else { ?>
-									<h3>Hai, <?= $this->session->userdata('nama') ?> anda hari ini sudah melakukan absensi <b>Masuk</b> dan <b>Pulang</b></h3>
+									<h3>Hai, <?= $this->session->userdata('nama') ?> anda hari ini sudah melakukan Absensi <b>Masuk</b> dan <b>Pulang</b></h3>
 								<?php }  ?>
 						</div>
 					</div>
 					<div class="form-group row">
 						<div class="col-sm-12">
-							<div id='maps-absen' name="maps_absen" style='width: 100%; height:250px;'></div>
+							<div id='maps-absen' name="maps-absen" style='width: 100%; height:250px;'></div>
 							<hr>
-							<div id="location_maps" name="location_maps"></div>
-							<!-- <input type="text" id="lokasi" name="lokasi"> -->
+							<input id="location_maps" name="location_maps"></input>
 							<?= form_error('maps-absen', '<small class="text-danger ml-3 mt-1">', '</small>'); ?>
 						</div>
 					</div>
@@ -100,7 +96,7 @@
 					<div class="form-group row">
 						<div class="col-sm-10">
 							<h3>Silahkan lakukan absen pada tombol absen berikut </h3>
-							<button class="btn btn-primary" id="btn-absensi">Absen <?= $waktu ?></button></h4>
+							<button class="btn btn-primary" id="btn-absensi"><?= $waktu ?></button></h4>
 						</div>
 					</div>
 				</div>

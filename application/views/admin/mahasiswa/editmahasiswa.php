@@ -16,10 +16,10 @@
  					</div>
 
  					<div class="form-group row">
- 						<label class="col-sm-2 col-form-label" for=" email">Email</label>
+ 						<label class="col-sm-2 col-form-label" for=" email">Username</label>
  						<div class="col-sm-10">
- 							<input type="text" id="email" name="email" value="<?= $data->email ?>" class=" form-control" placeholder="Email">
- 							<?= form_error('email', '<span class="text-danger small">', '</span>'); ?>
+ 							<input type="text" id="username" name="username" value="<?= $data->username ?>" class=" form-control" placeholder="username">
+ 							<?= form_error('username', '<span class="text-danger small">', '</span>'); ?>
  						</div>
  					</div>
 
@@ -124,7 +124,21 @@
  							<?= form_error('photo', '<span class="text-danger small">', '</span>'); ?>
  						</div>
  					</div>
-
+ 					<div class="form-group row">
+ 						<label for="role_id" class="col-sm-2 col-form-label">Role Akun</label>
+ 						<div class="col-sm-10">
+ 							<select name="role_id" class="form-control">
+ 								<option value="" selected="" disabled="">Pilih Role</option>
+ 								<option <?php if ($data->role_id == '1') {
+												echo 'selected';
+											} ?> value="1">Administrator</option>
+ 								<option <?php if ($data->role_id == '2') {
+												echo 'selected';
+											} ?> value="2">Mahasiswa</option>
+ 							</select>
+ 							<?= form_error('role_id', '<small class="text-danger ml-3 mt-1">', '</small>'); ?>
+ 						</div>
+ 					</div>
  					<hr>
  					<h4 class="text-primary font-weight-bold">Keluarga</h4>
  					<br>

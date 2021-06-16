@@ -14,13 +14,19 @@
  					</div>
 
  					<div class="row form-group">
- 						<label class="col-sm-2 col-form-label" for=" email">Email</label>
+ 						<label class="col-sm-2 col-form-label" for=" email">Username</label>
  						<div class="col-sm-10">
- 							<input type="text" id="email" name="email" class="form-control" placeholder="Email">
- 							<?= form_error('email', '<span class="text-danger small">', '</span>'); ?>
+ 							<input type="text" id="username" name="username" class="form-control" placeholder="username">
+ 							<?= form_error('username', '<span class="text-danger small">', '</span>'); ?>
  						</div>
  					</div>
-
+ 					<div class="row form-group">
+ 						<label class="col-sm-2 col-form-label" for=" email">Password</label>
+ 						<div class="col-sm-10">
+ 							<input type="password" id="password" name="password" class="form-control" placeholder="password">
+ 							<?= form_error('password', '<span class="text-danger small">', '</span>'); ?>
+ 						</div>
+ 					</div>
  					<div class="row form-group">
  						<label class="col-sm-2 col-form-label" for=" nim">NIM</label>
  						<div class="col-sm-10">
@@ -109,6 +115,18 @@
  						<label class="col-sm-2 col-form-label" for=" photo">Upload Pas Photo</label>
  						<div class="col-sm-10">
  							<input type="file" id="photo" name="photo" class="form-control" placeholder="Pas Photo">
+ 						</div>
+ 					</div>
+
+ 					<div class="form-group row">
+ 						<label for="role_id" class="col-sm-2 col-form-label">Role Akun</label>
+ 						<div class="col-sm-10">
+ 							<select name="role_id" class="form-control">
+ 								<option value="" selected="" disabled="">Pilih Role</option>
+ 								<option value="1">Administrator</option>
+ 								<option value="2">Mahasiswa</option>
+ 							</select>
+ 							<?= form_error('role_id', '<small class="text-danger ml-3 mt-1">', '</small>'); ?>
  						</div>
  					</div>
 

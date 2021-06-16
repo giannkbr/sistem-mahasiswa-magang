@@ -66,7 +66,7 @@
 									</a>
 									<div class="dropdown-menu dropdown-menu-right profile-dropdown ">
 										<!-- item-->
-										<a href="#" class="dropdown-item">Hai, <?= $this->session->userdata('name') ?></a>
+										<a href="#" class="dropdown-item">Hai, <?= $this->session->userdata('nama') ?></a>
 										<a class="dropdown-item d-block" href="<?php base_url('auth/change_password') ?>"><span class="badge badge-success float-right">11</span><i class="mdi mdi-settings"></i> Profile</a>
 										<div class="dropdown-divider"></div>
 										<a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">

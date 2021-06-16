@@ -11,7 +11,7 @@
  						<tr>
  							<th>Nomor</th>
  							<th>Nama Mahasiswa</th>
- 							<th>Email</th>
+ 							<th>Username</th>
  							<th>NIM</th>
  							<th>NIK</th>
  							<th>Jenis Kelamin</th>
@@ -28,7 +28,7 @@
  							<tr>
  								<td><?= $no++ ?></td>
  								<td><?= ucfirst($mahasiswa->nama) ?></td>
- 								<td><?= ucfirst($mahasiswa->email) ?></td>
+ 								<td><?= ucfirst($mahasiswa->username) ?></td>
  								<td><?= ucfirst($mahasiswa->nim) ?></td>
  								<td><?= ucfirst($mahasiswa->nik) ?></td>
  								<td><?= ucfirst($mahasiswa->jenis_kelamin) ?></td>

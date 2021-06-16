@@ -78,3 +78,11 @@ $route['edit-kontrak'] = 'Kontrak/editkontrak';
 $route['data-absensi'] = 'Absen';
 $route['rekap-absensi'] = 'Absen/rekapabsensi';
 $route['rekap-absensi-filter'] = 'Absen/laporanfilter';
+
+// Master Cuti 
+$route['data-cuti'] = 'Cuti';
+$route['terima-cuti'] = 'Cuti/cuti_terima/';
+$route['tolak-cuti'] = 'Cuti/cuti_tolak/';
+
+$route['data-cuti-karyawan'] = 'Cuti/cuti_karyawan';
+$route['add-cuti-karyawan'] = 'Cuti/cuti_add';
