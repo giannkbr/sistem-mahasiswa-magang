@@ -10,9 +10,10 @@
 			</form> -->
 			<div class="card-body">
 				<table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-					<thead>
+				<thead>
 						<th>Nomor</th>
 						<th>Nama</th>
+						<th>Tanggal Absen</th>
 						<th>Jam Masuk</th>
 						<th>Jam Pulang</th>
 						<th>Deskripsi Kegiatan</th>
@@ -25,12 +26,14 @@
 							<tr>
 								<td width="1%"><?= $no++ ?></td>
 								<td><?= ucfirst($d->nama) ?></td>
+								<td><?= ucfirst($d->waktu) ?></td>
 								<td><?= ucfirst($d->jam_masuk) ?></td>
 								<td><?= ucfirst($d->jam_pulang) ?></td>
 								<td><?= ucfirst($d->deskripsi) ?></td>
 								<td><?= ucfirst($d->keterangan) ?></td>
 								<td>
 									<a href="<?= base_url('absen/editabsensi/' . $d->id_absen) ?>" class="btn btn-sm btn-primary btn-sm"><span class="fa fa-edit"></span></a>
+									<a href="<?= base_url('absen/printabsensi/' . $d->id_absen) ?>" class=" btn btn-sm btn-danger btn-sm"><span class="fa fa-print"></span></a>
 								</td>
 							</tr>
 						<?php } ?>

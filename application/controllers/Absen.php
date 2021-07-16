@@ -123,6 +123,16 @@ class Absen extends CI_Controller
 
 		$this->load->view('templates/app', $data, FALSE);
 	}
+
+	public function printabsensi($id)
+	{
+		$data = [
+			'title' => 'Data Absensi',
+			'data' => $this->absen->printabsensi($id)
+		];
+
+		$this->load->view('admin/absensi/printabsensi', $data, FALSE);
+	}
 }
 
 /* End of file Absen.php */

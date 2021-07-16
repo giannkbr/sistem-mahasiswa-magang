@@ -52,7 +52,7 @@
 			<div class="card-header">
 				<h3>Notifikasi</h3>
 			</div>
-			<form method="post" action="<?= base_url('user/proses_absen'); ?>">
+			<form method="post" action="<?= base_url('user/proses_absen') ?>">
 				<div class="card-body">
 					<div class="form-group row">
 						<div class="col-sm-10">
@@ -60,15 +60,20 @@
 								<h3>Hai, <?= $this->session->userdata('nama') ?> Anda hari ini belum melakukan Absen <b><?= $waktu ?></b>.
 									<input type="hidden" name="ket" id="ket" value="<?= $waktu ?>">
 								<?php } else { ?>
-									<h3>Hai, <?= $this->session->userdata('nama') ?> anda hari ini sudah melakukan Absensi <b>Masuk</b> dan <b>Pulang</b></h3>
+									<h3>Hai, <?= $this->session->userdata('nama') ?> Anda hari ini sudah melakukan Absensi <b>Masuk</b> dan <b>Pulang</b></h3>
 								<?php }  ?>
 						</div>
+						<input type="hidden" value="<?= date('G:i:s') ?>">
 					</div>
 					<div class="form-group row">
 						<div class="col-sm-12">
 							<div id='maps-absen' name="maps-absen" style='width: 100%; height:250px;'></div>
-							<hr>
-							<input id="location_maps" name="location_maps"></input>
+							<input type="hidden" name="location_maps" id="location_maps_hidden" />
+							<script type="text/javascript">
+								setInterval(function() {
+									document.getElementById("location_maps_hidden").value = document.getElementById("location_maps").innerHTML;
+								}, 5);
+							</script>
 							<?= form_error('maps-absen', '<small class="text-danger ml-3 mt-1">', '</small>'); ?>
 						</div>
 					</div>
@@ -79,8 +84,6 @@
 								<option value="" selected="" disabled="">Pilih Keterangan</option>
 								<option value="1">WFO</option>
 								<option value="2">WFH</option>
-								<option value="3">Sakit</option>
-								<option value="4">Izin</option>
 							</select>
 							<?= form_error('keterangan_kerja', '<small class="text-danger ml-3 mt-1">', '</small>'); ?>
 						</div>
@@ -90,13 +93,12 @@
 						<div class="col-sm-10">
 							<textarea name="deskripsi" id="" cols="50" rows="10"></textarea>
 							<?= form_error('deskripsi', '<small class="text-danger ml-3 mt-1">', '</small>'); ?>
-							<!-- 	 -->
 						</div>
 					</div>
 					<div class="form-group row">
 						<div class="col-sm-10">
 							<h3>Silahkan lakukan absen pada tombol absen berikut </h3>
-							<button class="btn btn-primary" id="btn-absensi"><?= $waktu ?></button></h4>
+							<button class="btn btn-primary" id="btn-absensi">Absen <?= $waktu ?></button></h4>
 						</div>
 					</div>
 				</div>
